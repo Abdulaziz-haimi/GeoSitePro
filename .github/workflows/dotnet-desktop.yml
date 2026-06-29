@@ -7,14 +7,16 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: windows-2022
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v2
+        uses: microsoft/setup-msbuild@v3
+        with:
+          msbuild-architecture: x64
 
       - name: Setup NuGet
         uses: nuget/setup-nuget@v2
@@ -26,6 +28,7 @@ jobs:
         shell: powershell
         run: |
           $publishPath = Join-Path $env:GITHUB_WORKSPACE "publish"
+          $vsToolsPath = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VisualStudio\v17.0"
 
           msbuild GeoSitePro.csproj `
             /p:Configuration=Release `
@@ -36,7 +39,12 @@ jobs:
             /p:DeleteExistingFiles=true `
             /p:PublishUrl="$publishPath\" `
             /p:publishUrl="$publishPath\" `
-            /p:VisualStudioVersion=17.0
+            /p:VisualStudioVersion=17.0 `
+            /p:VSToolsPath="$vsToolsPath\"
+
+          if ($LASTEXITCODE -ne 0) {
+            exit $LASTEXITCODE
+          }
 
           if (!(Test-Path $publishPath)) {
             New-Item -ItemType Directory -Path $publishPath | Out-Null
