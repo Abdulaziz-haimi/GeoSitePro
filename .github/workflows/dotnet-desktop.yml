@@ -75,4 +75,4 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./publish/
-          server-dir: ./www/site1/
+          server-dir: ./site1/
