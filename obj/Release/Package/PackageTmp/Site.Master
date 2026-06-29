@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Site" %>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head runat="server">
+<meta charset="utf-8" />
+<title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+<style>
+:root{--primary:#0f766e;--primary-dark:#115e59;--danger:#dc2626;--success:#16a34a;--warning:#d97706;--muted:#6b7280;--bg:#f3f4f6;--card:#fff;--border:#e5e7eb;--text:#111827}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,Arial,sans-serif;direction:rtl}.layout{display:flex;min-height:100vh}.sidebar{width:270px;background:#0f172a;color:#fff;min-height:100vh;position:fixed;right:0;top:0;bottom:0;overflow-y:auto}.brand{padding:22px 20px;border-bottom:1px solid rgba(255,255,255,.12)}.brand-title{font-size:25px;font-weight:900;color:#5eead4}.brand-subtitle{margin-top:5px;color:#cbd5e1;font-size:12px;line-height:1.6}.nav{padding:14px}.nav-section-title{color:#94a3b8;font-size:12px;font-weight:800;margin:18px 10px 8px}.nav-link{display:block;padding:11px 13px;margin-bottom:6px;border-radius:10px;color:#e5e7eb;text-decoration:none;font-weight:700;font-size:14px;transition:.15s}.nav-link:hover{background:rgba(255,255,255,.10);color:#fff}.nav-link.active{background:var(--primary);color:#fff}.main{margin-right:270px;width:calc(100% - 270px);min-height:100vh}.topbar{background:#fff;border-bottom:1px solid var(--border);min-height:64px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;position:sticky;top:0;z-index:50}.topbar-title{font-weight:900;color:var(--primary-dark);font-size:16px}.topbar-user{display:flex;align-items:center;gap:10px;color:#374151;font-size:14px}.content{padding:24px}.gsp-page{width:100%}.gsp-page-header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.gsp-page-title{margin:0;color:#111827;font-size:27px;font-weight:900}.gsp-page-subtitle{margin-top:6px;color:#6b7280;font-size:14px;line-height:1.7}.gsp-card{background:var(--card);border:1px solid var(--border);border-radius:15px;padding:18px;margin-bottom:18px;box-shadow:0 8px 24px rgba(15,23,42,.05)}.card{background:var(--card);border:1px solid var(--border);border-radius:15px;padding:18px;margin-bottom:18px;box-shadow:0 8px 24px rgba(15,23,42,.05)}.gsp-card-title{margin:0 0 14px;font-size:18px;font-weight:900;color:var(--primary-dark)}.gsp-grid{display:grid;gap:14px}.gsp-grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.gsp-grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.gsp-stat{background:#f9fafb;border:1px solid var(--border);border-radius:14px;padding:17px}.gsp-stat-label{color:#6b7280;font-size:13px;font-weight:800;margin-bottom:7px}.gsp-stat-value{font-size:28px;font-weight:900;color:#111827}.gsp-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.gsp-btn{display:inline-block;border:0;border-radius:9px;padding:9px 13px;font-weight:900;font-size:13px;text-decoration:none;cursor:pointer;line-height:1.4}.gsp-btn-primary{background:var(--primary);color:#fff}.gsp-btn-primary:hover{background:var(--primary-dark)}.gsp-btn-secondary{background:#e5e7eb;color:#111827}.gsp-btn-success{background:var(--success);color:#fff}.gsp-btn-danger{background:var(--danger);color:#fff}.gsp-btn-warning{background:var(--warning);color:#fff}.gsp-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.full{grid-column:1/-1}.gsp-label{display:block;font-weight:900;font-size:13px;color:#374151;margin-bottom:6px}.gsp-required{color:var(--danger)}.gsp-input,.gsp-select,.gsp-textarea{width:100%;border:1px solid #d1d5db;border-radius:10px;padding:10px 12px;font-size:14px;font-family:inherit;outline:none;background:#fff}.gsp-input:focus,.gsp-select:focus,.gsp-textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(15,118,110,.12)}.gsp-textarea{min-height:100px;resize:vertical}.gsp-table-wrap{width:100%;overflow-x:auto}.gsp-table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}.gsp-table th{background:#f9fafb;color:#374151;font-weight:900;padding:11px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}.gsp-table td{padding:10px 11px;border-bottom:1px solid var(--border);vertical-align:top}.gsp-table tr:hover td{background:#f9fafb}.gsp-message{border-radius:12px;padding:13px 15px;margin-bottom:16px;font-weight:700}.gsp-message-success{background:#dcfce7;color:#166534;border:1px solid #bbf7d0}.gsp-message-danger{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}.gsp-muted{color:#6b7280}.gsp-badge{display:inline-block;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:900}.gsp-badge-success{background:#dcfce7;color:#166534}.gsp-badge-danger{background:#fee2e2;color:#991b1b}.gsp-badge-muted{background:#e5e7eb;color:#374151}.gsp-badge-warning{background:#fef3c7;color:#92400e}.gsp-checklist label{margin-left:18px;display:inline-block;font-weight:700;color:#374151}.gsp-checklist input{margin-left:5px}@media(max-width:980px){.sidebar{position:relative;width:100%;min-height:auto}.layout{display:block}.main{margin-right:0;width:100%}.gsp-page-header{display:block}.gsp-grid-2,.gsp-grid-4,.gsp-form-grid{grid-template-columns:1fr}}
+</style>
+<asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+<form id="form1" runat="server">
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-title">GeoSite Pro</div><div class="brand-subtitle">Sprint 16 - الأمان وجاهزية النشر</div></div>
+  <nav class="nav">
+    <div class="nav-section-title">الرئيسية</div>
+    <asp:HyperLink ID="lnkDashboard" runat="server" NavigateUrl="~/Dashboard.aspx" CssClass="nav-link">لوحة التحكم</asp:HyperLink>
+    <asp:HyperLink ID="lnkProjects" runat="server" NavigateUrl="~/Projects.aspx" CssClass="nav-link">المشاريع</asp:HyperLink>
+    <div class="nav-section-title">التحري الحقلي - Sprint 2</div>
+    <asp:HyperLink ID="lnkBoreholes" runat="server" NavigateUrl="~/Boreholes.aspx" CssClass="nav-link">الجسات Boreholes</asp:HyperLink>
+    <asp:HyperLink ID="lnkBoreholeLog" runat="server" NavigateUrl="~/BoreholeLog.aspx" CssClass="nav-link">سجل الجسة Borehole Log</asp:HyperLink>
+    <asp:HyperLink ID="lnkSamples" runat="server" NavigateUrl="~/Samples.aspx" CssClass="nav-link">العينات Samples</asp:HyperLink>
+    <asp:HyperLink ID="lnkSPTTests" runat="server" NavigateUrl="~/SPTTests.aspx" CssClass="nav-link">اختبارات SPT</asp:HyperLink>
+    <asp:HyperLink ID="lnkGroundwater" runat="server" NavigateUrl="~/Groundwater.aspx" CssClass="nav-link">المياه الجوفية</asp:HyperLink>
+    <div class="nav-section-title">المختبر - Sprint 3</div>
+    <asp:HyperLink ID="lnkLabResults" runat="server" NavigateUrl="~/LabResults.aspx" CssClass="nav-link">النتائج المعملية Lab Results</asp:HyperLink>
+    <div class="nav-section-title">التقارير - Sprint 4</div>
+    <asp:HyperLink ID="lnkReports" runat="server" NavigateUrl="~/Reports.aspx" CssClass="nav-link">التقارير الفنية Reports</asp:HyperLink>
+
+    <div class="nav-section-title">الجودة والمعايير - Sprint 6</div>
+    <asp:HyperLink ID="lnkStandards" runat="server" NavigateUrl="~/Standards.aspx" CssClass="nav-link">المعايير Standards</asp:HyperLink>
+    <asp:HyperLink ID="lnkQualityChecks" runat="server" NavigateUrl="~/ProjectQualityCheck.aspx" CssClass="nav-link">فحص الجودة QA/QC</asp:HyperLink>
+    <asp:HyperLink ID="lnkCalculations" runat="server" NavigateUrl="~/EngineeringCalculations.aspx" CssClass="nav-link">الحسابات Calculations</asp:HyperLink>
+
+    <div class="nav-section-title">قوالب التحري - Sprint 8</div>
+    <asp:HyperLink ID="lnkInvestigationTemplates" runat="server" NavigateUrl="~/InvestigationTemplates.aspx" CssClass="nav-link">قوالب التحري Templates</asp:HyperLink>
+    <asp:HyperLink ID="lnkProjectInvestigationPlan" runat="server" NavigateUrl="~/ProjectInvestigationPlan.aspx" CssClass="nav-link">خطة تحري المشروع</asp:HyperLink>
+
+    <div class="nav-section-title">الخرائط والمقاطع - Sprint 9</div>
+    <asp:HyperLink ID="lnkSiteMap" runat="server" NavigateUrl="~/SiteMap.aspx" CssClass="nav-link">خريطة الموقع والجسات</asp:HyperLink>
+    <asp:HyperLink ID="lnkCrossSections" runat="server" NavigateUrl="~/CrossSections.aspx" CssClass="nav-link">المقاطع Cross Sections</asp:HyperLink>
+
+    <div class="nav-section-title">تبادل البيانات - Sprint 10</div>
+    <asp:HyperLink ID="lnkDataExchange" runat="server" NavigateUrl="~/DataExchange.aspx" CssClass="nav-link">تبادل البيانات CSV</asp:HyperLink>
+    <asp:HyperLink ID="lnkGisCadExport" runat="server" NavigateUrl="~/GisCadExport.aspx" CssClass="nav-link">تصدير GIS/CAD</asp:HyperLink>
+
+    <div class="nav-section-title">الطباعة والتسليم - Sprint 11</div>
+    <asp:HyperLink ID="lnkPrintableOutputs" runat="server" NavigateUrl="~/PrintableOutputs.aspx" CssClass="nav-link">مخرجات الطباعة</asp:HyperLink>
+    <div class="nav-section-title">المخرجات والتشغيل - Sprint 7</div>
+    <asp:HyperLink ID="lnkProjectDocuments" runat="server" NavigateUrl="~/ProjectDocuments.aspx" CssClass="nav-link">المرفقات Documents</asp:HyperLink>
+    <asp:HyperLink ID="lnkExportCenter" runat="server" NavigateUrl="~/ExportCenter.aspx" CssClass="nav-link">مركز التصدير Export</asp:HyperLink>
+    <asp:HyperLink ID="lnkProductionReadiness" runat="server" NavigateUrl="~/ProductionReadiness.aspx" CssClass="nav-link">جاهزية الإنتاج</asp:HyperLink>
+
+    <div class="nav-section-title">سير العمل والاعتمادات - Sprint 12</div>
+    <a href="WorkflowInbox.aspx" class="nav-link">صندوق سير العمل</a>
+    <a href="ProjectApproval.aspx" class="nav-link">اعتماد المشروع</a>
+    <a href="ApprovalMatrix.aspx" class="nav-link">مصفوفة الاعتماد</a>
+    
+
+    <div class="nav-section-title">التنبيهات والمتابعة - Sprint 13</div>
+    <a href="Notifications.aspx" class="nav-link">مركز التنبيهات</a>
+    <a href="FollowUpBoard.aspx" class="nav-link">لوحة المتابعة</a>
+    <a href="NotificationRules.aspx" class="nav-link">قواعد التنبيهات</a>
+
+
+    <div class="nav-section-title">المؤشرات والمخاطر - Sprint 14</div>
+    <a href="ExecutiveDashboard.aspx" class="nav-link">لوحة المؤشرات التنفيذية</a>
+    <a href="ProjectRiskRegister.aspx" class="nav-link">سجل المخاطر</a>
+    <a href="QualityKpiDashboard.aspx" class="nav-link">مؤشرات الجودة KPI</a>
+
+
+    <div class="nav-section-title">إدارة التشغيل - Sprint 15</div>
+    <a href="SystemSettings.aspx" class="nav-link">إعدادات النظام</a>
+    <a href="BackupCenter.aspx" class="nav-link">مركز النسخ الاحتياطي</a>
+    <a href="SystemHealth.aspx" class="nav-link">فحص صحة النظام</a>
+    <a href="OperationLogs.aspx" class="nav-link">سجل التشغيل</a>
+
+
+    <div class="nav-section-title">الأمان والنشر - Sprint 16</div>
+    <a href="SecurityCenter.aspx" class="nav-link">مركز الأمان</a>
+    <a href="PasswordPolicy.aspx" class="nav-link">سياسة كلمة المرور</a>
+    <a href="DeploymentChecklist.aspx" class="nav-link">قائمة جاهزية النشر</a>
+    <div class="nav-section-title">الإدارة - Sprint 5</div>
+    <asp:HyperLink ID="lnkUsers" runat="server" NavigateUrl="~/Users.aspx" CssClass="nav-link">المستخدمون Users</asp:HyperLink>
+    <asp:HyperLink ID="lnkRoles" runat="server" NavigateUrl="~/Roles.aspx" CssClass="nav-link">الأدوار Roles</asp:HyperLink>
+    <asp:HyperLink ID="lnkRolePermissions" runat="server" NavigateUrl="~/RolePermissions.aspx" CssClass="nav-link">صلاحيات الأدوار</asp:HyperLink>
+    <asp:HyperLink ID="lnkAuditLog" runat="server" NavigateUrl="~/AuditLog.aspx" CssClass="nav-link">سجل التدقيق Audit Log</asp:HyperLink>
+  </nav>
+</aside>
+<main class="main">
+  <div class="topbar">
+    <div class="topbar-title">GeoSite Pro</div>
+    <div class="topbar-user"><span>مرحبًا، <strong><asp:Literal ID="litCurrentUser" runat="server" /></strong></span><asp:LinkButton ID="btnLogout" runat="server" CssClass="gsp-btn gsp-btn-secondary" OnClick="btnLogout_Click">تسجيل الخروج</asp:LinkButton></div>
+  </div>
+  <div class="content"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></div>
+</main>
+</div>
+</form>
+</body>
+</html>

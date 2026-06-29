@@ -1,0 +1,759 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{550B5BFD-709A-4DDD-8C54-9F1CABD17564}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoSitePro</RootNamespace>
+    <AssemblyName>GeoSitePro</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44377</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessDenied.aspx" />
+    <Content Include="ApprovalMatrix.aspx" />
+    <Content Include="AuditLog.aspx" />
+    <Content Include="BackupCenter.aspx" />
+    <Content Include="BoreholeLog.aspx" />
+    <Content Include="BoreholeLogPrint.aspx" />
+    <Content Include="BoreholePlanning.aspx" />
+    <Content Include="Boreholes.aspx" />
+    <Content Include="CrossSections.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="DataExchange.aspx" />
+    <Content Include="DataExportDownload.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DeploymentChecklist.aspx" />
+    <Content Include="DeskStudy.aspx" />
+    <Content Include="EngineeringCalculations.aspx" />
+    <Content Include="ExecutiveDashboard.aspx" />
+    <Content Include="ExportCenter.aspx" />
+    <Content Include="FollowUpBoard.aspx" />
+    <Content Include="GisCadExport.aspx" />
+    <Content Include="Groundwater.aspx" />
+    <Content Include="InvestigationTemplates.aspx" />
+    <Content Include="LabResults.aspx" />
+    <Content Include="LabTestResults.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="NotificationRules.aspx" />
+    <Content Include="Notifications.aspx" />
+    <Content Include="OperationLogs.aspx" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csc.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csi.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.AppContext.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.Collections.Immutable.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.Diagnostics.StackTrace.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.IO.FileSystem.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.Reflection.Metadata.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\vbc.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\VBCSCompiler.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csc.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csi.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.Win32.Primitives.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.AppContext.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Collections.Immutable.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Console.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Diagnostics.StackTrace.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Globalization.Calendars.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.IO.Compression.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.IO.Compression.ZipFile.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.IO.FileSystem.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Net.Http.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Net.Sockets.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Reflection.Metadata.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Text.Encoding.CodePages.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.ValueTuple.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Xml.ReaderWriter.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Xml.XmlDocument.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Xml.XPath.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Xml.XPath.XDocument.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe" />
+    <Content Include="PasswordPolicy.aspx" />
+    <Content Include="PrintableOutputs.aspx" />
+    <Content Include="ProductionReadiness.aspx" />
+    <Content Include="ProjectApproval.aspx" />
+    <Content Include="ProjectDetails.aspx" />
+    <Content Include="ProjectDocuments.aspx" />
+    <Content Include="ProjectInvestigationPlan.aspx" />
+    <Content Include="ProjectPrintPackage.aspx" />
+    <Content Include="ProjectQualityCheck.aspx" />
+    <Content Include="ProjectRiskRegister.aspx" />
+    <Content Include="Projects.aspx" />
+    <Content Include="QualityKpiDashboard.aspx" />
+    <Content Include="README_AR.txt" />
+    <Content Include="ReportEditor.aspx" />
+    <Content Include="ReportPrint.aspx" />
+    <Content Include="Reports.aspx" />
+    <Content Include="RolePermissions.aspx" />
+    <Content Include="Roles.aspx" />
+    <Content Include="Samples.aspx" />
+    <Content Include="Scripts\GeoSitePro_Database.sql" />
+    <Content Include="Scripts\Sprint10\38_Create_Tables_Sprint10.sql" />
+    <Content Include="Scripts\Sprint10\39_Create_Permissions_Sprint10.sql" />
+    <Content Include="Scripts\Sprint10\40_Create_StoredProcedures_Sprint10.sql" />
+    <Content Include="Scripts\Sprint10\41_Verify_Sprint10_DB.sql" />
+    <Content Include="Scripts\Sprint10\README_SPRINT10_AR.txt" />
+    <Content Include="Scripts\Sprint11\42_Create_Tables_Sprint11.sql" />
+    <Content Include="Scripts\Sprint11\43_Create_Permissions_Sprint11.sql" />
+    <Content Include="Scripts\Sprint11\44_Create_StoredProcedures_Sprint11.sql" />
+    <Content Include="Scripts\Sprint11\45_Verify_Sprint11_DB.sql" />
+    <Content Include="Scripts\Sprint11\README_SPRINT11_AR.txt" />
+    <Content Include="Scripts\Sprint12\46_Create_Tables_Sprint12.sql" />
+    <Content Include="Scripts\Sprint12\47_Create_Permissions_Sprint12.sql" />
+    <Content Include="Scripts\Sprint12\48_Create_StoredProcedures_Sprint12.sql" />
+    <Content Include="Scripts\Sprint12\49_Verify_Sprint12_DB.sql" />
+    <Content Include="Scripts\Sprint12\README_SPRINT12_AR.txt" />
+    <Content Include="Scripts\Sprint13\50_Create_Tables_Sprint13.sql" />
+    <Content Include="Scripts\Sprint13\51_Create_Permissions_Seed_Sprint13.sql" />
+    <Content Include="Scripts\Sprint13\52_Create_StoredProcedures_Sprint13.sql" />
+    <Content Include="Scripts\Sprint13\53_Verify_Sprint13_DB.sql" />
+    <Content Include="Scripts\Sprint13\README_SPRINT13_AR.txt" />
+    <Content Include="Scripts\Sprint14\54_Create_Tables_Sprint14.sql" />
+    <Content Include="Scripts\Sprint14\55_Create_Permissions_Seed_Sprint14.sql" />
+    <Content Include="Scripts\Sprint14\56_Create_StoredProcedures_Sprint14.sql" />
+    <Content Include="Scripts\Sprint14\57_Verify_Sprint14_DB.sql" />
+    <Content Include="Scripts\Sprint14\README_SPRINT14_AR.txt" />
+    <Content Include="Scripts\Sprint15\58_Create_Tables_Sprint15.sql" />
+    <Content Include="Scripts\Sprint15\59_Create_Permissions_Seed_Sprint15.sql" />
+    <Content Include="Scripts\Sprint15\60_Create_StoredProcedures_Sprint15.sql" />
+    <Content Include="Scripts\Sprint15\61_Verify_Sprint15_DB.sql" />
+    <Content Include="Scripts\Sprint15\README_SPRINT15_AR.txt" />
+    <Content Include="Scripts\Sprint16\62_Create_Tables_Sprint16.sql" />
+    <Content Include="Scripts\Sprint16\63_Create_Permissions_Seed_Sprint16.sql" />
+    <Content Include="Scripts\Sprint16\64_Create_StoredProcedures_Sprint16.sql" />
+    <Content Include="Scripts\Sprint16\65_Verify_Sprint16_DB.sql" />
+    <Content Include="Scripts\Sprint16\README_SPRINT16_AR.txt" />
+    <Content Include="Scripts\Sprint1_UserFiles\01_Create_Database.sql" />
+    <Content Include="Scripts\Sprint1_UserFiles\02_Create_Tables_Sprint1.sql" />
+    <Content Include="Scripts\Sprint1_UserFiles\03_Create_Lookups_Permissions.sql" />
+    <Content Include="Scripts\Sprint1_UserFiles\04_Create_StoredProcedures_Sprint1.sql" />
+    <Content Include="Scripts\Sprint1_UserFiles\05_Seed_Admin_User.sql" />
+    <Content Include="Scripts\Sprint2\06A_Schema_Compatibility_Before_Sprint2.sql" />
+    <Content Include="Scripts\Sprint2\06_Create_Tables_Sprint2.sql" />
+    <Content Include="Scripts\Sprint2\07_Create_Lookups_Permissions_Sprint2.sql" />
+    <Content Include="Scripts\Sprint2\07_Create_Lookups_Permissions_Sprint2_FIXED.sql" />
+    <Content Include="Scripts\Sprint2\08_Create_StoredProcedures_Sprint2.sql" />
+    <Content Include="Scripts\Sprint2\08_Create_StoredProcedures_Sprint2_FIXED.sql" />
+    <Content Include="Scripts\Sprint2\09_Verify_Sprint2_DB.sql" />
+    <Content Include="Scripts\Sprint2\README_SPRINT2_AR.txt" />
+    <Content Include="Scripts\Sprint2\README_SPRINT2_FIX_AR.txt" />
+    <Content Include="Scripts\Sprint3\10_Create_Tables_Sprint3.sql" />
+    <Content Include="Scripts\Sprint3\11_Create_Lookups_Permissions_Sprint3.sql" />
+    <Content Include="Scripts\Sprint3\12_Create_StoredProcedures_Sprint3.sql" />
+    <Content Include="Scripts\Sprint3\13_Verify_Sprint3_DB.sql" />
+    <Content Include="Scripts\Sprint3\README_SPRINT3_AR.txt" />
+    <Content Include="Scripts\Sprint4\14_Create_Tables_Sprint4.sql" />
+    <Content Include="Scripts\Sprint4\15_Create_Lookups_Permissions_Sprint4.sql" />
+    <Content Include="Scripts\Sprint4\16_Create_StoredProcedures_Sprint4.sql" />
+    <Content Include="Scripts\Sprint4\17_Verify_Sprint4_DB.sql" />
+    <Content Include="Scripts\Sprint4\README_SPRINT4_AR.txt" />
+    <Content Include="Scripts\Sprint5\18_Schema_Compatibility_Sprint5.sql" />
+    <Content Include="Scripts\Sprint5\19_Create_Permissions_Sprint5.sql" />
+    <Content Include="Scripts\Sprint5\20_Create_StoredProcedures_Sprint5.sql" />
+    <Content Include="Scripts\Sprint5\21_Verify_Sprint5_DB.sql" />
+    <Content Include="Scripts\Sprint5\README_SPRINT5_AR.txt" />
+    <Content Include="Scripts\Sprint6\22_Create_Tables_Sprint6.sql" />
+    <Content Include="Scripts\Sprint6\23_Create_Lookups_Permissions_Sprint6.sql" />
+    <Content Include="Scripts\Sprint6\24_Create_StoredProcedures_Sprint6.sql" />
+    <Content Include="Scripts\Sprint6\25_Verify_Sprint6_DB.sql" />
+    <Content Include="Scripts\Sprint6\README_SPRINT6_AR.txt" />
+    <Content Include="Scripts\Sprint7\26_Create_Tables_Sprint7.sql" />
+    <Content Include="Scripts\Sprint7\27_Create_Lookups_Permissions_Sprint7.sql" />
+    <Content Include="Scripts\Sprint7\28_Create_StoredProcedures_Sprint7.sql" />
+    <Content Include="Scripts\Sprint7\29_Verify_Sprint7_DB.sql" />
+    <Content Include="Scripts\Sprint7\README_SPRINT7_AR.txt" />
+    <Content Include="Scripts\Sprint8\30_Create_Tables_Sprint8.sql" />
+    <Content Include="Scripts\Sprint8\31_Create_Lookups_Permissions_Templates_Sprint8.sql" />
+    <Content Include="Scripts\Sprint8\32_Create_StoredProcedures_Sprint8.sql" />
+    <Content Include="Scripts\Sprint8\33_Verify_Sprint8_DB.sql" />
+    <Content Include="Scripts\Sprint8\README_SPRINT8_AR.txt" />
+    <Content Include="Scripts\Sprint9\34_Create_Tables_Sprint9.sql" />
+    <Content Include="Scripts\Sprint9\35_Create_Lookups_Permissions_Sprint9.sql" />
+    <Content Include="Scripts\Sprint9\36_Create_StoredProcedures_Sprint9.sql" />
+    <Content Include="Scripts\Sprint9\37_Verify_Sprint9_DB.sql" />
+    <Content Include="Scripts\Sprint9\README_SPRINT9_AR.txt" />
+    <Content Include="SecurityCenter.aspx" />
+    <Content Include="SiteMap.aspx" />
+    <Content Include="SiteVisit.aspx" />
+    <Content Include="SPTTests.aspx" />
+    <Content Include="Standards.aspx" />
+    <Content Include="SystemHealth.aspx" />
+    <Content Include="SystemSettings.aspx" />
+    <Content Include="Users.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="WorkflowInbox.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovalMatrix.aspx.cs">
+      <DependentUpon>ApprovalMatrix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApprovalMatrix.aspx.designer.cs">
+      <DependentUpon>ApprovalMatrix.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuditLog.aspx.designer.cs">
+      <DependentUpon>AuditLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackupCenter.aspx.cs">
+      <DependentUpon>BackupCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackupCenter.aspx.designer.cs">
+      <DependentUpon>BackupCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BoreholeLog.aspx.designer.cs">
+      <DependentUpon>BoreholeLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BoreholeLogPrint.aspx.cs">
+      <DependentUpon>BoreholeLogPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BoreholeLogPrint.aspx.designer.cs">
+      <DependentUpon>BoreholeLogPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BoreholePlanning.aspx.designer.cs">
+      <DependentUpon>BoreholePlanning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Boreholes.aspx.designer.cs">
+      <DependentUpon>Boreholes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrossSections.aspx.cs">
+      <DependentUpon>CrossSections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrossSections.aspx.designer.cs">
+      <DependentUpon>CrossSections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataExchange.aspx.cs">
+      <DependentUpon>DataExchange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataExchange.aspx.designer.cs">
+      <DependentUpon>DataExchange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataExportDownload.aspx.cs">
+      <DependentUpon>DataExportDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataExportDownload.aspx.designer.cs">
+      <DependentUpon>DataExportDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeploymentChecklist.aspx.cs">
+      <DependentUpon>DeploymentChecklist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeploymentChecklist.aspx.designer.cs">
+      <DependentUpon>DeploymentChecklist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeskStudy.aspx.designer.cs">
+      <DependentUpon>DeskStudy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EngineeringCalculations.aspx.cs">
+      <DependentUpon>EngineeringCalculations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EngineeringCalculations.aspx.designer.cs">
+      <DependentUpon>EngineeringCalculations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExecutiveDashboard.aspx.cs">
+      <DependentUpon>ExecutiveDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExecutiveDashboard.aspx.designer.cs">
+      <DependentUpon>ExecutiveDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportCenter.aspx.cs">
+      <DependentUpon>ExportCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportCenter.aspx.designer.cs">
+      <DependentUpon>ExportCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FollowUpBoard.aspx.cs">
+      <DependentUpon>FollowUpBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FollowUpBoard.aspx.designer.cs">
+      <DependentUpon>FollowUpBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GisCadExport.aspx.cs">
+      <DependentUpon>GisCadExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GisCadExport.aspx.designer.cs">
+      <DependentUpon>GisCadExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Groundwater.aspx.designer.cs">
+      <DependentUpon>Groundwater.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Helpers\PasswordHasher.cs" />
+    <Compile Include="Helpers\SecurityHelper.cs" />
+    <Compile Include="InvestigationTemplates.aspx.cs">
+      <DependentUpon>InvestigationTemplates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvestigationTemplates.aspx.designer.cs">
+      <DependentUpon>InvestigationTemplates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabResults.aspx.designer.cs">
+      <DependentUpon>LabResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabTestResults.aspx.designer.cs">
+      <DependentUpon>LabTestResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationRules.aspx.cs">
+      <DependentUpon>NotificationRules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationRules.aspx.designer.cs">
+      <DependentUpon>NotificationRules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperationLogs.aspx.cs">
+      <DependentUpon>OperationLogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperationLogs.aspx.designer.cs">
+      <DependentUpon>OperationLogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordPolicy.aspx.cs">
+      <DependentUpon>PasswordPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordPolicy.aspx.designer.cs">
+      <DependentUpon>PasswordPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintableOutputs.aspx.cs">
+      <DependentUpon>PrintableOutputs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintableOutputs.aspx.designer.cs">
+      <DependentUpon>PrintableOutputs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionReadiness.aspx.cs">
+      <DependentUpon>ProductionReadiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductionReadiness.aspx.designer.cs">
+      <DependentUpon>ProductionReadiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectApproval.aspx.cs">
+      <DependentUpon>ProjectApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectApproval.aspx.designer.cs">
+      <DependentUpon>ProjectApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectDetails.aspx.designer.cs">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectDocuments.aspx.designer.cs">
+      <DependentUpon>ProjectDocuments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectInvestigationPlan.aspx.cs">
+      <DependentUpon>ProjectInvestigationPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectInvestigationPlan.aspx.designer.cs">
+      <DependentUpon>ProjectInvestigationPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectPrintPackage.aspx.cs">
+      <DependentUpon>ProjectPrintPackage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectPrintPackage.aspx.designer.cs">
+      <DependentUpon>ProjectPrintPackage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectQualityCheck.aspx.designer.cs">
+      <DependentUpon>ProjectQualityCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRiskRegister.aspx.cs">
+      <DependentUpon>ProjectRiskRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectRiskRegister.aspx.designer.cs">
+      <DependentUpon>ProjectRiskRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QualityKpiDashboard.aspx.cs">
+      <DependentUpon>QualityKpiDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QualityKpiDashboard.aspx.designer.cs">
+      <DependentUpon>QualityKpiDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportEditor.aspx.designer.cs">
+      <DependentUpon>ReportEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint.aspx.designer.cs">
+      <DependentUpon>ReportPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RolePermissions.aspx.designer.cs">
+      <DependentUpon>RolePermissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.aspx.designer.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples.aspx.designer.cs">
+      <DependentUpon>Samples.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityCenter.aspx.cs">
+      <DependentUpon>SecurityCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecurityCenter.aspx.designer.cs">
+      <DependentUpon>SecurityCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteMap.aspx.cs">
+      <DependentUpon>SiteMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteMap.aspx.designer.cs">
+      <DependentUpon>SiteMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SiteVisit.aspx.cs">
+      <DependentUpon>SiteVisit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteVisit.aspx.designer.cs">
+      <DependentUpon>SiteVisit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SPTTests.aspx.cs">
+      <DependentUpon>SPTTests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SPTTests.aspx.designer.cs">
+      <DependentUpon>SPTTests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Standards.aspx.cs">
+      <DependentUpon>Standards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Standards.aspx.designer.cs">
+      <DependentUpon>Standards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemHealth.aspx.cs">
+      <DependentUpon>SystemHealth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemHealth.aspx.designer.cs">
+      <DependentUpon>SystemHealth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSettings.aspx.cs">
+      <DependentUpon>SystemSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemSettings.aspx.designer.cs">
+      <DependentUpon>SystemSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowInbox.aspx.cs">
+      <DependentUpon>WorkflowInbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkflowInbox.aspx.designer.cs">
+      <DependentUpon>WorkflowInbox.aspx</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\DataHelper.cs" />
+    <Content Include="App_Code\PasswordHasher.cs" />
+    <Content Include="App_Code\SecurityHelper.cs" />
+    <Compile Include="AuditLog.aspx.cs">
+      <DependentUpon>AuditLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BoreholeLog.aspx.cs">
+      <DependentUpon>BoreholeLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BoreholePlanning.aspx.cs">
+      <DependentUpon>BoreholePlanning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Boreholes.aspx.cs">
+      <DependentUpon>Boreholes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeskStudy.aspx.cs">
+      <DependentUpon>DeskStudy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Groundwater.aspx.cs">
+      <DependentUpon>Groundwater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabResults.aspx.cs">
+      <DependentUpon>LabResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabTestResults.aspx.cs">
+      <DependentUpon>LabTestResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectDetails.aspx.cs">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectDocuments.aspx.cs">
+      <DependentUpon>ProjectDocuments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectQualityCheck.aspx.cs">
+      <DependentUpon>ProjectQualityCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportEditor.aspx.cs">
+      <DependentUpon>ReportEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportPrint.aspx.cs">
+      <DependentUpon>ReportPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RolePermissions.aspx.cs">
+      <DependentUpon>RolePermissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples.aspx.cs">
+      <DependentUpon>Samples.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Site.Master" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\.signature.p7s" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net45\app.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net45\app.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net45\web.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net45\web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net46\app.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net46\app.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net46\web.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net46\web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1.nupkg" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\net45\install.ps1" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\net45\uninstall.ps1" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csc.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csc.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csi.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CSharp.Core.targets" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\vbc.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\vbc.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\VBCSCompiler.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csc.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csc.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csi.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csi.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CSharp.Core.targets" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.Managed.Core.targets" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe.config" />
+    <Content Include="SQL\GeoSitePro.bak" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Uploads\Projects\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3839</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44377/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
