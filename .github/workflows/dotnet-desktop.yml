@@ -25,11 +25,41 @@ jobs:
       - name: Publish GeoSitePro
         shell: powershell
         run: |
-          $publishPath = Join-Path $env:GITHUB_WORKSPACE "publish\"
-          msbuild GeoSitePro.csproj /p:Configuration=Release /p:Platform=AnyCPU /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=true /p:PublishUrl="$publishPath"
+          $publishPath = Join-Path $env:GITHUB_WORKSPACE "publish"
+
+          msbuild GeoSitePro.csproj `
+            /p:Configuration=Release `
+            /p:Platform=AnyCPU `
+            /p:DeployOnBuild=true `
+            /p:WebPublishMethod=FileSystem `
+            /p:PublishProvider=FileSystem `
+            /p:DeleteExistingFiles=true `
+            /p:PublishUrl="$publishPath\" `
+            /p:publishUrl="$publishPath\" `
+            /p:VisualStudioVersion=17.0
+
+          if (!(Test-Path $publishPath)) {
+            New-Item -ItemType Directory -Path $publishPath | Out-Null
+          }
+
+          $fileCount = (Get-ChildItem $publishPath -Recurse -ErrorAction SilentlyContinue | Measure-Object).Count
+
+          if ($fileCount -eq 0) {
+            $packageTmp = Join-Path $env:GITHUB_WORKSPACE "obj\Release\Package\PackageTmp"
+
+            if (Test-Path $packageTmp) {
+              Copy-Item "$packageTmp\*" $publishPath -Recurse -Force
+            } else {
+              Write-Error "Publish folder is empty and PackageTmp was not found."
+              exit 1
+            }
+          }
+
+          Write-Host "Published files:"
+          Get-ChildItem $publishPath -Recurse
 
       - name: Deploy to SmarterASP.NET via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.SMARTER_FTP_SERVER }}
           username: ${{ secrets.SMARTER_FTP_USERNAME }}
